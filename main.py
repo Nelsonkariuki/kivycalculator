@@ -1,20 +1,13 @@
-# Program to create a calculator
-
-# Program to Show how to create a switch
-# import kivy module
+# A program  to create a calculator with kivy
 import kivy
 
-# base Class of your App inherits from the App class.
-# app:always refers to the instance of your application
+# use  tis kivy version
 from kivy.app import App
 
-# this restrict the kivy version i.e
-# below this kivy version you cannot
-# use the app or software
 kivy.require ('1.9.0')
 
-# for making multiple bttons to arranging
-# them we are using this
+# to make multiple buttons to arranging
+
 from kivy.uix.gridlayout import GridLayout
 
 # for the size of window
@@ -24,10 +17,6 @@ from kivy.config import Config
 Config.set ('graphics', 'resizable', 1)
 
 
-## Config.set('graphics', 'width', '400')
-## Config.set('graphics', 'height', '400')
-
-
 # Creating Layout class
 class CalcGridLayout (GridLayout):
 
@@ -35,8 +24,7 @@ class CalcGridLayout (GridLayout):
     def calculate(self, calculation):
         if calculation:
             try:
-                # Solve formula and display it in entry
-                # which is pointed at by display
+
                 self.display.text = str (eval (calculation))
             except Exception:
                 self.display.text = "Error"
